@@ -47,13 +47,18 @@ model.add(Activation('softmax'))
 # design the optimizer
 optimizer = rmsprop(lr=0.0001, decay=1e-6)
 
-# let's train
+# training
 model.compile(loss='categorical_crossentropy',
               optimizer=optimizer,
               metrics=['accuracy'])
 model.fit(x_train, y_train,batch_size=batch_size,
           epochs=epochs, validation_data=(x_test, y_test),
           shuffle=True)
+
+# evaluation
+score = model.evaluate(x_test, y_test, verbose=0)
+print('Test loss:', score[0])
+print('Test accuracy:', score[1])
 
 
 
