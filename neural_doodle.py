@@ -49,15 +49,15 @@ from keras.applications import vgg19
 
 # Command line arguments
 parser = argparse.ArgumentParser(description='Keras neural doodle example')
-parser.add_argument('--nlabels', type=int,
+parser.add_argument('--nlabels', type=int, default=5,
                     help='number of semantic labels'
-                    ' (regions in differnet colors)'
+                    ' (regions in different colors)'
                     ' in style_mask/target_mask')
-parser.add_argument('--style-image', type=str,
+parser.add_argument('--style-image', type=str, default='./monet/style.png',
                     help='path to image to learn style from')
-parser.add_argument('--style-mask', type=str,
+parser.add_argument('--style-mask', type=str, default='./monet/style_mask.png',
                     help='path to semantic mask of style image')
-parser.add_argument('--target-mask', type=str,
+parser.add_argument('--target-mask', type=str, default='./monet/target_mask.png',
                     help='path to semantic mask of target image')
 parser.add_argument('--content-image', type=str, default=None,
                     help='path to optional content image')
