@@ -49,7 +49,7 @@ from keras.applications import vgg19
 
 # Command line arguments
 parser = argparse.ArgumentParser(description='Keras neural doodle example')
-parser.add_argument('--nlabels', type=int, default=5,
+parser.add_argument('--nlabels', type=int, default=4,
                     help='number of semantic labels'
                     ' (regions in different colors)'
                     ' in style_mask/target_mask')
